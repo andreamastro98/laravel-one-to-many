@@ -40,6 +40,20 @@
                                     <input class="form-control" type="file" id="formFile" name="cover_image">
                                 </div>
 
+                                {{-- select --}}
+                                <label for="projectType" class="form-label">Project Type</label>
+                                <select class="form-select @error('type_id') is-invalid @enderror" aria-label="Default select example" name="type_id">
+
+                                    <option value="">-- Scegli una categoria --</option>
+
+                                    @foreach ($types as $elem)
+                                        <option value="{{ $elem->id }}" {{ old( 'type_id', $project->type_id ) == $elem->id ? 'selected' : '' }}>{{ $elem->name }}</option>
+                                    @endforeach
+                                    @error('type_id')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror                                    
+                                </select>
+
                                  <button type="submit" class="btn btn-primary mt-5">Update Project</button>
 
                             </form>                         

@@ -17,6 +17,7 @@
                                             <div class="p-5">
                                                 
                                                 <h2 class="fw-bolder">{{$elem->title}}</h2>
+                                                <h6 class="fw-bolder">{{$elem->type->name}}</h6>
                                                 <p>{{$elem->description}}</p>
 
                                                 <div class="mb-1"> 
