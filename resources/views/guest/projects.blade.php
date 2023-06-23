@@ -16,7 +16,9 @@
                             <div class="d-flex align-items-center">
                                 <div class="p-5">
                                     <h2 class="fw-bolder">{{$elem->title}}</h2>
-                                    <h6 class="fw-bolder">{{$elem->type->name}}</h6>
+                                    @if ($elem->type)
+                                        <h6 class="fw-bolder">{{$elem->type->name}}</h6>
+                                    @endif                                    
                                     <p>{{$elem->description}}</p>
                                     <div> 
                                         <a class="btn btn-primary" href="{{ route('show', $elem->id )}}">Show</a>
